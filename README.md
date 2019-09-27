@@ -39,7 +39,6 @@
 - has_many :messages
 - has_many :groups through:  :groups_users
 
-
 ## messagesテーブル
 
 |Column|Type|Options|
