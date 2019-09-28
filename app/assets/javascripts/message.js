@@ -1,13 +1,12 @@
 $(function(){
 
   function createImage(message){
-    if(message.image.url == null){
+    if(message.image == null){
       return ``
     } else {
-      return `<img class="lower-message__image" src='${message.image.url}'></img>`
+      return `<img class="lower-message__image" src='${message.image}'></img>`
     }
   }
-
   function buildHTML(message){
       var html = `<div class="message" data-id="${message.id}">
                     <div class="message__upper">
