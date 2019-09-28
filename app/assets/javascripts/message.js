@@ -1,44 +1,35 @@
 $(function(){
+
+  function createImage(message){
+    if(message.image.url == null){
+      return ``
+    } else {
+      return `<img class="lower-message__image" src='${message.image.url}'></img>`
+    }
+  }
+
   function buildHTML(message){
-   if ( message.image ) {
-     var html =
-      `<div class="message" data-message-id=${message.id}>
-         <div class="upper-message">
-           <div class="upper-message__user-name">
-             ${message.user_name}
-           </div>
-           <div class="upper-message__date">
-             ${message.date}
-           </div>
-         </div>
-         <div class="lower-message">
-           <p class="lower-message__content">
-             ${message.content}
-           </p>
-         </div>
-         <img src=${message.image} >
-       </div>`
-     return html;
-   } else {
-     var html =
-      `<div class="message" data-message-id=${message.id}>
-         <div class="upper-message">
-           <div class="upper-message__user-name">
-             ${message.user_name}
-           </div>
-           <div class="upper-message__date">
-             ${message.date}
-           </div>
-         </div>
-         <div class="lower-message">
-           <p class="lower-message__content">
-             ${message.content}
-           </p>
-         </div>
-       </div>`
-     return html;
-   };
- }
+      var html = `<div class="message" data-id="${message.id}">
+                    <div class="message__upper">
+                      <div class="upper__name">
+                        ${message.user_name}
+                      </div>
+                      <div class="upper__date">
+                        ${message.date}
+                      </div>
+                    </div>
+                    <div class="message-text">
+                      <p class="lower-message__content">
+                        ${message.content}
+                      </p>
+                        ${createImage(message)}
+                  </div>`
+    return html
+  }
+
+
+
+
 $('.new_message').on('submit', function(e){
  e.preventDefault();
  var formData = new FormData(this);
