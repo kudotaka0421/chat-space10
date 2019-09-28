@@ -9,15 +9,15 @@ $(function(){
   }
   function buildHTML(message){
       var html = `<div class="message" data-id="${message.id}">
-                    <div class="message__upper">
-                      <div class="upper__name">
+                    <div class="upper-message">
+                      <div class="upper-message__user-name">
                         ${message.user_name}
                       </div>
-                      <div class="upper__date">
+                      <div class="upper-message__date">
                         ${message.date}
                       </div>
                     </div>
-                    <div class="message-text">
+                    <div class="lower-message">
                       <p class="lower-message__content">
                         ${message.content}
                       </p>
