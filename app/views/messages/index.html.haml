@@ -9,12 +9,11 @@
           Member：
           - @group.users.each do |group_user|
             = group_user.name
-      -# = link_to edit_group_path(@group), data: {"turbolinks" => false} do
 
 
       .right-header
         .right-header__button
-          = link_to "Edit", edit_group_path(@group), data: {"turbolinks" => false}
+          = link_to "Edit", edit_group_path(@group), 'data-turbolinks': false
 
 
     .messages

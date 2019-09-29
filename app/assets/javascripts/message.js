@@ -29,7 +29,7 @@ $(function(){
 
 
 $('.new_message').on('submit', function(){
-//  e.preventDefault();
+
  var formData = new FormData(this);
  var url = $(this).attr('action')
  $.ajax({
@@ -45,7 +45,6 @@ $('.new_message').on('submit', function(){
     var html = buildHTML(data);
     $('.messages').append(html);
     $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
-    // $('div').animate({scrollTop: $('.messages').height()})
     $('form')[0].reset();
   })
    .fail(function(){
@@ -70,7 +69,6 @@ $('.new_message').on('submit', function(){
       $('.messages').append(insertHTML);
       $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
 
-      // $('div').animate({scrollTop: $('.messages').height()})
       })
     })
     .fail(function() {
